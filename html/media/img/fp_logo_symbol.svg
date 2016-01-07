@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 89.5 97.9" style="enable-background:new 0 0 89.5 97.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+	.st2{fill:url(#SVGID_3_);}
+</style>
+<g>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="42.8437" y1="66.1351" x2="42.8437" y2="1.095941e-09">
+		<stop  offset="0" style="stop-color:#044EE8"/>
+		<stop  offset="0.645" style="stop-color:#119DFF"/>
+		<stop  offset="1" style="stop-color:#119DFF"/>
+	</linearGradient>
+	<path class="st0" d="M79.8,32.6L54,17.8L27.4,2.4C15.8-4.3,0,3.8,0.1,17.9C0.7,12.4,7.9,3.9,21.4,7.1c14.7,3.4,23.9,21.6,27.3,33.4
+		c2.7,9.5,3.1,18,2.8,25.6c10.2,0.3,21.4-1.7,28.2-8.9c7.8-8.4,6.5-15.9,4.2-20.6C82.6,34.5,80.5,33,79.8,32.6z"/>
+	
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-2142.5381" y1="-2225.0183" x2="-2142.5381" y2="-2291.1533" gradientTransform="matrix(-0.5 -0.866 0.866 -0.5 903.1431 -2933.635)">
+		<stop  offset="0" style="stop-color:#044EE8"/>
+		<stop  offset="0.645" style="stop-color:#119DFF"/>
+		<stop  offset="1" style="stop-color:#119DFF"/>
+	</linearGradient>
+	<path class="st1" d="M0,18.8l0,30.1l0,30.7c0,13.4,14.9,23.1,27.1,16c-5,2.2-16,0.2-20-13.1C2.7,68,13.8,50.9,22.4,42.1
+		c6.8-7,14.1-11.7,20.8-15.2C38.3,17.9,31,9.2,21.3,7c-11.2-2.6-17,2.3-19.9,6.7C0.2,15.7,0.1,17.9,0,18.8z"/>
+	
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="934.3587" y1="-2971.9897" x2="934.3587" y2="-3038.0938" gradientTransform="matrix(-0.5 0.866 -0.866 -0.5 -2089.031 -2248.9624)">
+		<stop  offset="0" style="stop-color:#044EE8"/>
+		<stop  offset="0.645" style="stop-color:#119DFF"/>
+		<stop  offset="1" style="stop-color:#119DFF"/>
+	</linearGradient>
+	<path class="st2" d="M27.8,95.2l26-15l26.6-15.4c11.6-6.7,12.4-24.6,0.1-31.6c4.4,3.2,8.3,13.9-1.2,24c-10.3,11-30.7,9.9-42.6,6.9
+		c-9.5-2.4-17.2-6.3-23.6-10.4C7.9,62.4,4.1,73.1,7,82.6c3.3,11,10.5,13.6,15.7,13.9C25.2,96.4,26.8,95.7,27.8,95.2z"/>
+</g>
+</svg>

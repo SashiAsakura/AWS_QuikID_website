@@ -1,0 +1,184 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_-]+)?(.*) index.php?page=$1&$2 [QSA]
+
+RewriteCond %{HTTP_HOST} ^(www\.)?quikid\.ca$
+RewriteRule ^/?$ index.php?page=quikid
+
+
+RewriteCond %{QUERY_STRING} page=quikid_beta
+RewriteRule ^index\.php$ /quikid_download? [L,R=301]
+#Redirect /quikid_beta http://fusionpipe.com/?page=quikid_download
+
+Redirect 301 /news&events/press/2014/CIX_Top_20_Companies_in_Canada http://fusionpipe.com/press?page=pressdtls&prid=99
+
+Redirect 301 /news&events/press/2014/QuikID_Apps_to_be_in_the_Stores_for_download_this_month http://www.fusionpipe.com/press?page=pressdtls&prid=90
+
+Redirect 301 /news&events/press/2014/FusionPipe_sponsors_UBC_ECE_Capstone_Project_to_develop_Gesture_Controlled_Wearable_Solution http://www.fusionpipe.com/?page=pressdtls&prid=87
+
+Redirect 301 /news&events/press/2014/FusionPipe_Announces_Upcoming_Release_of_QuikSafe_Mobile_Security_Apps http://www.fusionpipe.com/?page=pressdtls&prid=78
+
+Redirect 301 /news&events/press/2014/David_Snell_Featured_in_BIV http://www.fusionpipe.com/?page=pressdtls&prid=86
+
+Redirect 301 /news&events/press/2014/Jamie_Glennon_Joins_FusionPipe_Software’s_Advisory_Board http://www.fusionpipe.com/?page=pressdtls&prid=75
+
+Redirect 301 /news&events/press/2014/FusionPipe%20Software%20receives%20new%20investment%20through%20Mike%20Volker%E2%80%99s%20BC%E2%80%99s%20WUTIF%20Fund http://www.fusionpipe.com/?page=pressdtls&prid=74
+
+Redirect 301 /news&events/press/2014/FusionPipe_Software_Welcomes_Andrew_Csinger_to_its_Advisory_Board http://www.fusionpipe.com/?page=pressdtls&prid=73
+
+Redirect 301 /news&events/press/2014/FusionPipe%20Software%20Solutions%20Receives%20NextBC%20Audience%20Choice%20Award http://www.fusionpipe.com/?page=pressdtls&prid=72
+
+Redirect 301 /news&events/press/2014/FusionPipe_Patrick_Hennessy_VP_Sales_Announcement http://www.fusionpipe.com/?page=pressdtls&prid=71
+
+Redirect 301 /news&events/press/2014/FusionPipe%20Software%20Solutions%20Selected%20As%20NextBC%E2%80%99s%20Top%2025%20Technology%20Companies http://www.fusionpipe.com/?page=pressdtls&prid=70
+
+Redirect 301 /news&events/press/2014/FusionPipe_BCTIA_Award_Press_Release http://www.fusionpipe.com/?page=pressdtls&prid=68
+
+Redirect 301 /news&events/press/2014/FusionPipe_Software_Adds_VP_of_Marketing_to_its_Growing_Team http://www.fusionpipe.com/?page=pressdtls&prid=66
+
+Redirect 301 /news&events/press/2014/FusionPipe_Software_Solutions_Announces_Oversubscription_of_Angel_Seed_Round_and_Jim_Barney_as_Angel_Director http://www.fusionpipe.com/?page=pressdtls&prid=65
+
+Redirect 301 /news&events/press/2014/FusionPipe_Software_Solutions_Announces_That_David_Snell_Takes_the_Helm_as_Chief_Executive_Officer%E2%80%93%20Seed_Round_Oversubscribed http://www.fusionpipe.com/?page=pressdtls&prid=64
+
+Redirect 301 /news&events/press/2013/FusionPipe_Announces_Addition_Of_Tom_Chiu_To_Its_Board_Of_Directors http://www.fusionpipe.com/?page=pressdtls&prid=63
+
+Redirect 301 /news&events/press/2012/Wavefront_And_BCNET_Accelerate_The_Commercialization_Of_Wireless_Innovation http://www.fusionpipe.com/?page=pressdtls&prid=62
+
+Redirect 301 /about/careers/ http://www.fusionpipe.com/company#careers
+
+Redirect 301 /about/careers/job_1.html http://www.fusionpipe.com/?page=careersdtls&car=1
+
+Redirect 301 /about/careers/job_2.html http://www.fusionpipe.com/?page=careersdtls&car=4
+Redirect 301 /about/careers/career_2.html http://www.fusionpipe.com/?page=careersdtls&car=4
+
+Redirect 301 /about/careers/job_3.html http://www.fusionpipe.com/?page=careersdtls&car=6
+
+Redirect 301 /about/careers/job_4.html http://www.fusionpipe.com/?page=careersdtls&car=5
+
+Redirect 301 /encryption_solutions/ http://www.fusionpipe.com/?page=container
+
+Redirect 301 /blog/bring-your-own-cloud-byoc http://www.fusionpipe.com/blog?page=blogdtls&prid=122
+
+Redirect 301 /blog/heartbleed-security-flaw-the-good-bad-and-ugly http://www.fusionpipe.com/blog?page=blogdtls&prid=120
+
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+# Or, compress certain file types by extension:
+<files *.html>
+SetOutputFilter DEFLATE
+</files>
+
+SetEnvIfNoCase Referer semalt.com spambot=yes
+SetEnvIfNoCase Referer darodar.com spambot=yes
+SetEnvIfNoCase Referer buttons-for-website.com spambot=yes
+SetEnvIfNoCase Referer fbdownloader.com spambot=yes
+SetEnvIfNoCase Referer descargar-musicas-gratis.com spambot=yes
+SetEnvIfNoCase Referer baixar-musicas-gratis.comsavetubevideo.com spambot=yes
+SetEnvIfNoCase Referer srecorder.com spambot=yes
+SetEnvIfNoCase Referer kambasoft.com spambot=yes
+SetEnvIfNoCase Referer ilovevitaly.com spambot=yes
+SetEnvIfNoCase Referer ilovevitaly.co spambot=yes
+SetEnvIfNoCase Referer ilovevitaly.ru spambot=yes
+SetEnvIfNoCase Referer blackhatworth.com spambot=yes
+SetEnvIfNoCase Referer priceg.com spambot=yes
+SetEnvIfNoCase Referer backgroundpictures.net spambot=yes
+SetEnvIfNoCase Referer embedle.com spambot=yes
+SetEnvIfNoCase Referer extener.com spambot=yes
+SetEnvIfNoCase Referer extener.org spambot=yes
+SetEnvIfNoCase Referer fbfreegifts.com spambot=yes
+SetEnvIfNoCase Referer feedouble.com spambot=yes
+SetEnvIfNoCase Referer feedouble.net spambot=yes
+SetEnvIfNoCase Referer japfm.com spambot=yes
+SetEnvIfNoCase Referer joinandplay.me spambot=yes
+SetEnvIfNoCase Referer joingames.org spambot=yes
+SetEnvIfNoCase Referer iskalko.ru spambot=yes
+SetEnvIfNoCase Referer musicprojectfoundation.com spambot=yes
+SetEnvIfNoCase Referer myprintscreen.com spambot=yes
+SetEnvIfNoCase Referer slftsdybbg.ru spambot=yes
+SetEnvIfNoCase Referer edakgfvwql.ru spambot=yes
+SetEnvIfNoCase Referer openfrost.com spambot=yes
+SetEnvIfNoCase Referer openfrost.net spambot=yes
+SetEnvIfNoCase Referer openmediasoft.com spambot=yes
+SetEnvIfNoCase Referer serw.clicksor.com spambot=yes
+SetEnvIfNoCase Referer socialseet.ru spambot=yes
+SetEnvIfNoCase Referer sharebutton.net spambot=yes
+SetEnvIfNoCase Referer cityadspix.com spambot=yes
+SetEnvIfNoCase Referer screentoolkit.com spambot=yes
+SetEnvIfNoCase Referer softomix.com spambot=yes
+SetEnvIfNoCase Referer softomix.net spambot=yes
+SetEnvIfNoCase Referer softomix.ru spambot=yes
+SetEnvIfNoCase Referer gobongo.info spambot=yes
+SetEnvIfNoCase Referer myftpupload.com spambot=yes
+SetEnvIfNoCase Referer websocial.me spambot=yes
+SetEnvIfNoCase Referer luxup.ru spambot=yes
+SetEnvIfNoCase Referer ykecwqlixx.ru spambot=yes
+SetEnvIfNoCase Referer soundfrost.org spambot=yes
+SetEnvIfNoCase Referer seoexperimenty.ru spambot=yes
+SetEnvIfNoCase Referer cenokos.ru spambot=yes
+SetEnvIfNoCase Referer star61.de spambot=yes
+SetEnvIfNoCase Referer superiends.org spambot=yes
+SetEnvIfNoCase Referer vapmedia.org spambot=yes
+SetEnvIfNoCase Referer econom.co spambot=yes
+SetEnvIfNoCase Referer vodkoved.ru spambot=yes
+SetEnvIfNoCase Referer adcash.com spambot=yes
+SetEnvIfNoCase Referer videofrost.com spambot=yes
+SetEnvIfNoCase Referer youtubedownload.org spambot=yes
+SetEnvIfNoCase Referer zazagames.org spambot=yes
+SetEnvIfNoCase Referer 7makemoneyonline.com spambot=yes
+SetEnvIfNoCase Referer ranksonic.info spambot=yes
+SetEnvIfNoCase Referer hulfingtonpost.com spambot=yes
+SetEnvIfNoCase Referer viandpet.com spambot=yes
+SetEnvIfNoCase Referer a-hau.mk spambot=yes
+SetEnvIfNoCase Referer cfsrating.sonicwall.com:8080 spambot=yes
+SetEnvIfNoCase Referer yougetsignal.com spambot=yes
+SetEnvIfNoCase Referer cenoval.ru spambot=yes
+SetEnvIfNoCase Referer bestwebsiteawards.com spambot=yes
+SetEnvIfNoCase Referer bestwebsitesawards.com spambot=yes
+SetEnvIfNoCase Referer simple-share-buttons.com spambot=yes
+SetEnvIfNoCase Referer adviceforum.info spambot=yes
+SetEnvIfNoCase Referer o-o-6-o-o.com spambot=yes
+SetEnvIfNoCase Referer o-o-8-o-o.com spambot=yes
+SetEnvIfNoCase Referer humanorightswatch.org spambot=yes
+SetEnvIfNoCase Referer smailik.org spambot=yes
+SetEnvIfNoCase Referer s.click.aliexpress.com spambot=yes
+SetEnvIfNoCase Referer social-buttons.com spambot=yes
+SetEnvIfNoCase Referer 4webmasters.org spambot=yes
+SetEnvIfNoCase Referer best-seo-offer.com spambot=yes
+SetEnvIfNoCase Referer best-seo-solution.com spambot=yes
+SetEnvIfNoCase Referer buttons-for-your-website.com spambot=yes
+SetEnvIfNoCase Referer www.Get-Free-Traffic-Now.com spambot=yes
+SetEnvIfNoCase Referer free-share-buttons.co spambot=yes
+SetEnvIfNoCase Referer theguardlan.com spambot=yes
+SetEnvIfNoCase Referer googlsucks.com spambot=yes
+SetEnvIfNoCase Referer buy-cheap-online.info spambot=yes
+SetEnvIfNoCase Referer forum69.info spambot=yes
+SetEnvIfNoCase Referer meendo-free-traffic.ga spambot=yes
+SetEnvIfNoCase Referer www.kabbalah-red-bracelets.com spambot=yes
+SetEnvIfNoCase Referer pornhub-forum.ga spambot=yes
+SetEnvIfNoCase Referer pornhubforum.tk spambot=yes
+SetEnvIfNoCase Referer anal-acrobats.hol.es spambot=yes
+SetEnvIfNoCase Referer youporn-forum.ga spambot=yes
+SetEnvIfNoCase Referer sexyteens.hol.es spambot=yes
+SetEnvIfNoCase Referer amanda-porn.ga spambot=yes
+SetEnvIfNoCase Referer generalporn.org spambot=yes
+SetEnvIfNoCase Referer depositfiles-porn.ga spambot=yes
+SetEnvIfNoCase Referer rapidgator-porn.ga spambot=yes
+SetEnvIfNoCase Referer torture.ml spambot=yes
+SetEnvIfNoCase Referer domination.ml spambot=yes
+SetEnvIfNoCase Referer webmaster-traffic.com spambot=yes
+SetEnvIfNoCase Referer youporn-forum.uni.me spambot=yes
+SetEnvIfNoCase Referer www.event-tracking.com spambot=yes
+Order allow,deny
+Allow from all
+Deny from env=spambot

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>QuikID&trade;Windows Dashboard</title>
+        <meta name="description" content="QuikID&trade;Windows Dashboard">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="normalize.min.css">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    
+    <body>
+		<!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+	    <!--[if gte IE 9]>
+		  <style type="text/css">
+		    .gradient {
+		       filter: none;
+		    }
+		  </style>
+		<![endif]-->
+        <script src="jquery-1.11.2.min.js"></script>
+        <script>
+        function startPairing(){
+            window.external.startPairing();
+        }
+        function disableDevice(uid){
+            window.external.disableDevice(uid);
+        }
+        function removeDevice(uid){
+            window.external.removeDevice(uid);
+        }
+        function clearDeviceList(){
+            $('#pairedList').empty();
+            $('#pairedList').append('<li class="addedDevice" id="emptyDevice"></li>' +
+                                    '<li class="addDevice">'+
+                                    '<div class="add" onclick="startPairing();"></div><p>Add New Device</p>'+
+                                    '</li>');
+        }
+        function addDevice(name,uid){
+            $('<li class="addedDevice"><div class="deviceName"><p>'+name+'</p></div><div class="btnDisable" onclick="disableDevice(\''+uid+'\')"></div><div class="btnDelete" onclick="removeDevice(\''+uid+'\')"></div></li>').insertBefore('#emptyDevice');
+        }
+        
+        function testEntries(){
+            for (var no=0;no < 10;no++){
+                addDevice('Test '+no,'uuid'+no);
+            }
+        }
+        $( document ).ready(function() {
+                //testEntries();
+        });
+        </script>
+    	<div id="wrapper">		
+	        <div class="header">
+	        	<div class="info"></div>
+	        </div>
+	        
+	        <div class="section" id="pairedDevices">
+	        	<h1>QuikID<span class="light">&trade; Dashboard</span></h1>
+	        	<ul id="pairedList">
+	        		<li class="addedDevice" id="emptyDevice"></li>
+
+	        		<li class="addDevice">
+		        		<div class="add" onclick="startPairing();"></div><p>Add New Device</p>
+	        		</li>
+	        	</ul>
+	        	<a class="tooltips" href="#">Tool Tips Example Link<span>Tooltip Text Goes Here</span></a>  		
+	        </div>
+
+	        <div class="footer">
+	        	<img class="powered" src="powered.png">
+	        </div>
+    	</div>
+               
+    </body>
+    
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>QuikID&trade;Windows Setup</title>
+        <meta name="description" content="QuikID&trade;Windows Setup">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="normalize.min.css">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    
+    <body>
+        <script src="jquery-1.11.2.min.js"></script>
+        <script>
+            /*function test(){
+                document.getElementById('login').value = 'test';
+            };*/
+        
+        function getLogin(){
+            return $('#login').val();
+        }
+        function getPassword(){
+            return $('#password').val();
+        }
+        
+        function loginError(){
+            alert('Unable to login - try again');
+            $('#password').val('');
+        }
+        
+        function getConnection(){
+            var val = $('input:radio[name=connection]:checked').val();
+            return val;
+        }
+        
+        function doPairing(){
+            window.external.doPairing(getLogin(),getPassword(),getConnection());
+            return false;
+        }
+        
+        function cancelPairing(){
+            window.external.cancelPairing();
+            return false;
+        }
+        
+        
+        </script>
+		<form class="formContainer">
+				
+			<div class="formTitle">
+				<h1>Setup</h1>
+				<h2>Please enter your login information to your computer</h2>
+			</div>
+			
+			<div class="formBlock">
+				<label>Username</label>
+				<input class="formField" type="text" name="login" id="login"/>
+			</div>
+			<div class="formBlock">
+				<label>Password</label>
+				<input class="formField" type="text" name="password" id="password"/>
+			</div>
+
+			<div class="formBlock radio">
+				<label class="connection">Connection</label>
+				<div class="radioBG">
+					<input type="radio" name="connection" id="radio1" class="radiobox" checked="checked" value="wifi"/>
+					<label for="radio1" class="radiolabel">Network</label> 
+					<input type="radio" name="connection" id="radio2" class="radiobox" value="btle"/>
+					<label for="radio2" class="radiolabel">Bluetooth</label> 
+				</div>
+			</div>
+						
+			<div class="submit-container">
+			 	<button type="cancel" class="cancel" onclick="return cancelPairing()">Cancel</button>
+			 	<button type="submit" onclick="return doPairing();">Next</button>
+			</div>
+		</form>
+    </body>
+
+</html>
